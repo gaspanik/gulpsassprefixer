@@ -1,11 +1,12 @@
 var gulp = require('gulp')
+,	gutil = require('gulp-util')
 ,	sass = require('gulp-ruby-sass')
 ,	prefix = require('gulp-autoprefixer')
 ,	minifycss = require('gulp-minify-css')
 ,	rename = require('gulp-rename');
 
 gulp.task('styles', function() {
-	gulp.src('scss/*.scss')
+	return gulp.src('scss/*.scss')
 	.pipe(sass({ style: 'expanded' }))
 	.pipe(prefix('last 2 version'))
 	.pipe(gulp.dest('css'))
